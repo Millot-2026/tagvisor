@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Tagvisor est un outil d'audit de balises et meta données SEO. Analysez la structure sémantique et les balises de vos pages web.">
     <title>Tagvisor — Testeur de Balises & Meta</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header class="app-header">
         <div class="logo-area">
@@ -28,7 +32,7 @@
                 </div>
                 <span id="char-count" class="info-text">0 caractères</span>
             </div>
-            
+
             <!-- Volet de sélection de fichiers (affiché si dossier ouvert) -->
             <div id="file-explorer" class="file-explorer hidden">
                 <ul id="file-list"></ul>
@@ -36,7 +40,8 @@
 
             <!-- Éditeur de code (fallback ou affichage du fichier sélectionné) -->
             <div class="textarea-wrapper">
-                <textarea id="html-input" placeholder="Ouvrez un dossier de projet ou collez votre code HTML ici..."></textarea>
+                <textarea id="html-input"
+                    placeholder="Ouvrez un dossier de projet ou collez votre code HTML ici..."></textarea>
             </div>
         </section>
 
@@ -54,7 +59,8 @@
                     <div class="serp-preview">
                         <div class="serp-url" id="serp-display-url">https://monsite.com/page</div>
                         <div class="serp-title" id="serp-display-title">Titre de la page (Title)</div>
-                        <div class="serp-desc" id="serp-display-desc">La description de votre page apparaîtra ici lors des recherches...</div>
+                        <div class="serp-desc" id="serp-display-desc">La description de votre page apparaîtra ici lors
+                            des recherches...</div>
                     </div>
                 </div>
 
@@ -82,4 +88,5 @@
     <script src="assets/js/parser.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>
