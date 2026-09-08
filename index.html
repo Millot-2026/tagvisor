@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagvisor — Testeur de Balises & Meta</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo-area">
+            <h1>Tagvisor</h1>
+            <span class="badge-app">Audit Meta & Sémantique</span>
+        </div>
+        <div class="actions-area">
+            <button id="btn-open-folder" class="btn btn-secondary">Ouvrir un dossier</button>
+            <button id="btn-save-file" class="btn btn-primary" disabled>Sauvegarder</button>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <!-- Section gauche : Explorateur de fichiers & Éditeur -->
+        <section class="panel editor-panel">
+            <div class="panel-header">
+                <div>
+                    <h2 id="folder-title">Explorateur de projet</h2>
+                    <span id="active-file-label" class="active-file-badge">Aucun fichier sélectionné</span>
+                </div>
+                <span id="char-count" class="info-text">0 caractères</span>
+            </div>
+            
+            <!-- Volet de sélection de fichiers (affiché si dossier ouvert) -->
+            <div id="file-explorer" class="file-explorer hidden">
+                <ul id="file-list"></ul>
+            </div>
+
+            <!-- Éditeur de code (fallback ou affichage du fichier sélectionné) -->
+            <div class="textarea-wrapper">
+                <textarea id="html-input" placeholder="Ouvrez un dossier de projet ou collez votre code HTML ici..."></textarea>
+            </div>
+        </section>
+
+        <!-- Section droite : Résultats de l'analyse -->
+        <section class="panel results-panel">
+            <div class="panel-header">
+                <h2>Rapport d'audit</h2>
+                <div id="global-score" class="score-badge">- / 100</div>
+            </div>
+
+            <div class="results-content">
+                <!-- Bloc SERP Preview -->
+                <div class="card serp-card">
+                    <h3>Aperçu dans les moteurs de recherche (SERP)</h3>
+                    <div class="serp-preview">
+                        <div class="serp-url" id="serp-display-url">https://monsite.com/page</div>
+                        <div class="serp-title" id="serp-display-title">Titre de la page (Title)</div>
+                        <div class="serp-desc" id="serp-display-desc">La description de votre page apparaîtra ici lors des recherches...</div>
+                    </div>
+                </div>
+
+                <!-- Bloc Meta Données -->
+                <div class="card">
+                    <h3>Métas Principales</h3>
+                    <ul class="metric-list" id="meta-metrics"></ul>
+                </div>
+
+                <!-- Bloc Sémantique & Structure Hn -->
+                <div class="card">
+                    <h3>Structure Sémantique & Titres (H1-H6)</h3>
+                    <div class="structure-summary" id="structure-metrics"></div>
+                </div>
+
+                <!-- Bloc Accessibilité / Checklist -->
+                <div class="card">
+                    <h3>Checklist Accessibilité & Attributs</h3>
+                    <ul class="checklist" id="a11y-checklist"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/parser.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
